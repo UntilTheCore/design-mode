@@ -14,7 +14,7 @@ class Person {
     // 每个人发布消息时只需维护自己“被订阅”列表。
     publish(score: number) {
         console.log(this.classify + this.name + '发布了信息');
-        console.log(this.classify + this.name + '有' + this.list.length + '人订阅他的消息!');
+        console.log('当前' + this.classify + this.name + '有' + this.list.length + '人订阅他的消息!');
         this.list.forEach(function (item) {
             item(score);
         });
@@ -48,4 +48,5 @@ p4.subscribe( p1,(score: number) => {
         console.log('我是学生古，我对80分以上的内容敢兴趣!');
     }
 })
+
 p1.publish(62);
